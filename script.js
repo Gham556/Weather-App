@@ -3,10 +3,20 @@ const button = document.querySelector('button');
 const city = document.querySelector('#city');
 const state = document.querySelector('#state');
 const country = document.querySelector('#country');
-const location = document.querySelector('#location')
+const searchLocation = document.querySelector('#location')
+const image = document.querySelector('img')
+const description = document.querySelector('#description');
+const t = document.querySelector('#t');
+const fl = document.querySelector('#fl');
+const tmin = document.querySelector('#tmin');
+const tmax = document.querySelector('#tmax');
+const h = document.querySelector('#h');
+const degrees = document.querySelector('#degrees');
+const speed = document.querySelector('#speed');
 
-const getLongLat = function () {fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city.value},${state.value},${countryCodes[country.value]}&limit=1&appid=69ff2ed8b60981a3839ce9cc55bec2a8`, {mode:'cors'})
 
+const getLongLat = function () {
+fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city.value},${state.value},${countryCodes[country.value]}&limit=1&appid=69ff2ed8b60981a3839ce9cc55bec2a8`, {mode:'cors'})
 
 .then(function(response) {
     return response.json()
@@ -26,9 +36,26 @@ return response.json()
 })
 
 .then(function (response) {
-    return(response.main, response.weather, response.wind)
+    return[response.main, response.weather, response.wind]
 })
-};
+
+.then(function (response) {
+    console.log(response);
+    searchLocation.textContent = city.value + ', ' + state.value;
+    image.src = `http://openweathermap.org/img/wn/${response[1][0].icon}@2x.png`
+    description.textContent = response[1][0].description;
+     t.textContent = response[0].temp + '\u00B0';
+     fl.textContent = response[0].feels_like + '\u00B0';
+    tmin.textContent = response[0].temp_min + '\u00B0';
+    tmax.textContent = response [0].temp_max + '\u00B0';
+    h.textContent = response[0].humidity + '%';
+    degrees.textContent = response[2].deg;
+    speed.textContent = response[2].speed;
+
+
+})
+
+}
 
 
 for (let i of allCountries) {
