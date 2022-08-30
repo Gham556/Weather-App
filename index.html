@@ -9,16 +9,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <label for="city">City</label>
-    <input type="text" id="city">
-    <div>
-        <label for="state">State(if in US)</label>
-        <input type="text" id="state">
+    <div id="content">
+        <div class="inputs">
+            <label for="city">City</label>
+            <input type="text" id="city">
+            <div>
+                <label for="state">State(if in US)</label>
+                <input type="text" id="state">
+            </div>
+            <div>
+                <label for="country">Country</label>
+                <select name="country" id="country"></select>
+            </div>
+            <button>Search</button>
+        </div>
+        <div id="displayContainer">
+            <div id="location">Temp</div>
+            <div id="weather">
+                <img id="logo" src="http://openweathermap.org/img/wn/50d@2x.png" alt="">
+                <div id="description">Mist</div>
+            </div>
+            <div id="temperatures">
+                <div id="temp">
+                    <label for="t">Temperature</label>
+                    <div id="t">70 degrees</div>
+                </div>
+                <div id="feels_like">
+                    <label for="fl">Feels Like</label>
+                    <div id="fl">80 degrees</div>
+                </div>
+                <div id="temp_min">
+                    <label for="tmin">Minimum Temp</label>
+                    <div id="tmin">70 degrees</div>
+                </div>
+                <div id="temp_max">
+                    <label for="tmax">Maximumn Temp</label>
+                    <div id="tmax">80 degrees</div>
+                </div>
+                <div id="humidity">
+                    <label for="h">Humidity</label>
+                    <div id="h">80%</div>
+                </div>
+            </div>
+            
+            <div id='wind'>
+                <div class="title">Wind</div>
+                <div id="degrees">90</div>
+                <div id="speed">20 k/h</div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="country">Country</label>
-        <select name="country" id="country"></select>
-    </div>
-    <button>Search</button>
 </body>
 </html>

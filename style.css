@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.inputs {
+    display: flex;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+
+    gap: 64px;
+}
+
+#displayContainer {
+    align-items: center;
+    max-width: 80vh;
+    
+}
+
+#location {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 2rem;
+}
+
+#weather img {
+    height: 12rem;
+}
+
+#temperatures > div {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    gap: 7rem;
+    margin-top: 2rem;
+}
+
+label {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+#wind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#wind .title {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+#wind #degrees {
+    margin-top: 10px;
+}
+
+#wind #speed {
+    margin-top: 10px;
+}
