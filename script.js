@@ -28,7 +28,7 @@ fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city.value},${state.val
 
 .then(function(response) {
     console.log(response)
-    return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${response[1]}&lon=${response[0]}&appid=69ff2ed8b60981a3839ce9cc55bec2a8`, {mode:'cors'})
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${response[1]}&lon=${response[0]}&units=imperial&appid=69ff2ed8b60981a3839ce9cc55bec2a8`, {mode:'cors'})
 })
 
 .then(function(response) {
@@ -50,7 +50,7 @@ return response.json()
     tmax.textContent = response [0].temp_max + '\u00B0';
     h.textContent = response[0].humidity + '%';
     degrees.textContent = response[2].deg;
-    speed.textContent = response[2].speed;
+    speed.textContent = response[2].speed + 'm/h';
 
 
 })
